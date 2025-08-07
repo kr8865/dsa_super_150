@@ -17,6 +17,12 @@ public class validate_bst {
         long max = Long.MIN_VALUE;
         long min = Long.MAX_VALUE;
         boolean isbst = true;
+        int sum = 0;
+        int ans = 0;// only bst part ka sum
+
+    }
+
+    public int maxsumBST(Node root) {
 
     }
 
@@ -34,7 +40,14 @@ public class validate_bst {
         Bst sbp = new Bst();
         sbp.min = Math.min(lbp.min, Math.min(rbp.min, root.data));
         sbp.max = Math.max(lbp.max, Math.max(rbp.max, root.data));
+        sbp.sum = lbp.sum + rbp.sum + root.data;
         sbp.isbst = lbp.isbst && rbp.isbst && lbp.max < root.data && rbp.min > root.data;
+        if (sbp.isbst) {
+            sbp.ans = Math.max(lbp.ans, Math.max(rbp.ans, sbp.sum));
+        } else {
+            sbp.ans = Math.max(lbp.ans, rbp.ans);
+
+        }
         return sbp;
 
     }
