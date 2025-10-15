@@ -1,0 +1,63 @@
+1.remove
+2.ignore
+3.marked visisted
+4.self work
+5.add unvisited 
+//5 imp steps in graphs
+
+public void BFT() {
+		Queue<Integer> q=new LinkedList<>();
+		HashSet<Integer> visited=new HashSet<>();
+		for(int src:map.keySet()) {
+			if(visited.contains(src)) {
+				continue;
+			}
+			q.add(src);
+			while(!q.isEmpty()) {
+				// 1. remove
+				int r=q.poll();
+				// 2. Ignore if already visited
+				if(visited.contains(r)) {
+					continue;
+				}
+				// 3. Marked Visited
+				visited.add(r);
+				// 4. self work
+				System.out.println(r+" ");
+				// 5. Add unvisited nbrs
+				for(int nbrs:map.get(r).keySet()) {
+					if(!visited.contains(nbrs)) {
+						q.add(nbrs);
+					}	
+				}	
+			}
+		}
+	}
+	public void DFT() {
+		Stack<Integer> st=new Stack<>();
+		HashSet<Integer> visited=new HashSet<>();
+		for(int src:map.keySet()) {
+			if(visited.contains(src)) {
+				continue;
+			}
+			st.push(src);
+			while(!st.isEmpty()) {
+				// 1. remove
+				int r=st.pop();
+				// 2. Ignore if already visited
+				if(visited.contains(r)) {
+					continue;
+				}
+				// 3. Marked visited
+				visited.add(r);
+				// 4.self work
+				System.out.println(r+" ");
+				// 5. Add unvisited nbrs
+				for(int nbrs:map.get(r).keySet()) {
+					if(!visited.contains(nbrs)) {
+						st.push(nbrs);
+					}
+				}
+			}
+		}
+	}
