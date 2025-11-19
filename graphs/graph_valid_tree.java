@@ -6,7 +6,7 @@ public class graph_valid_tree {
         
     }
     public boolean validTree(int n,int[][] edges){
-        HashMap<Integer ,List<Integer>> map=new HashMap<>();
+        HashMap<Integer ,ArrayList<Integer>> map=new HashMap<>();
         for(int i=0;i<n;i++){
             map.put(i,new ArrayList<>());
         }
@@ -18,6 +18,7 @@ public class graph_valid_tree {
 
 
         }
+        return false;
     }
     
 }

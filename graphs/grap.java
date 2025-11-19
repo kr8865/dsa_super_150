@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class grap {
-     private HashMap<Integer ,HashMap<Integer,Integer>> map;
-    public graph(int v){
+     private static HashMap<Integer ,HashMap<Integer,Integer>> map;
+    public void graph(int v){
         map=new HashMap<>();
         for(int i=1;i<=v;i++){
             map.put(i,new HashMap<>());
@@ -54,8 +54,8 @@ public class grap {
 
         
     }
-    public boolean BFS(int src,int des){bi
-        Queue<Integer> q=new LinkedList()<>();
+    public boolean BFS(int src,int des){
+        Queue<Integer> q=new LinkedList<>();
         HashSet<Integer> visited=new HashSet<>();
         q.add(src);
         while(!q.isEmpty()){

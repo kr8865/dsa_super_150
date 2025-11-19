@@ -1,5 +1,9 @@
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class bipartite {
-    public static void main(String[] args) {
+	public static void main(String[] args) {
     }
 	public boolean isBipartite(int[][] graph) {
 		Queue<BipartitePair> q=new LinkedList<>();
@@ -11,7 +15,8 @@ public class bipartite {
 			
 			q.add(new BipartitePair(i,0));
 			}
-		}
+		return false;
+		
 	}
 	
 	class BipartitePair{
@@ -22,8 +27,7 @@ public class bipartite {
 			this.dis=dis;
 		}
 	}
-
-}
     
+}
     
 
